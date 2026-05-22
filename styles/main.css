@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
   Нормализация блочной модели
  */
@@ -28,18 +29,16 @@ body,
   Убираем внешние отступы вертикали нужным тегам,
   у которых есть атрибут class
  */
-:where(
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  dl
-):where([class]) {
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
   margin-block: 0;
 }
 
@@ -71,7 +70,6 @@ body,
  */
 p {
   --paragraphMarginBottom: 24px;
-
   margin-block: 0;
 }
 
@@ -82,7 +80,6 @@ p {
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
-
 
 /**
   Упрощаем работу с изображениями и видео
@@ -160,10 +157,8 @@ button {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not(
-  [fill="none"],
-  [fill^="url"]
-)) {
+:where([fill]:not([fill=none],
+[fill^=url])) {
   fill: currentColor;
 }
 
@@ -172,10 +167,8 @@ button {
   (за исключением тех, у которых уже указан
   атрибут stroke со значением 'none')
  */
-:where([stroke]:not(
-  [stroke="none"],
-  [stroke^="url"]
-)) {
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
   stroke: currentColor;
 }
 
@@ -208,3 +201,46 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+@font-face {
+  font-family: "Kumbh Sans";
+  src: url("../fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  background-color: darkseagreen;
+}
+body p {
+  color: red;
+}
+
+/*# sourceMappingURL=main.css.map */
