@@ -30,10 +30,10 @@
 @use 'blocks/blog-actions';
 @use 'blocks/blog-card';
 
-.header,
-main > *:not(:last-child),
-.footer {
-  display: none !important;
+// .header,
+// main > *:not(:last-child),
+// .footer {
+//   display: none !important;
 
   
-}
+// }
